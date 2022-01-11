@@ -297,7 +297,7 @@ AppAsset::register($this);
                 </nav>
                             <!-- End of Topbar -->
 
-                            <div class="p-3">
+                            <div class="p-4">
                                <?php echo $content ?> 
                             </div>   
             </div>

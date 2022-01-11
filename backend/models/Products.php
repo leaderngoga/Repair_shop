@@ -56,7 +56,7 @@ class Products extends \yii\db\ActiveRecord
             'category_id' => 'Category ID',
             'date_creation' => 'Date Creation',
             'user_creation' => 'User Creation',
-            'status' => 'Status',
+            'status' => 'Active',
         ];
     }
 

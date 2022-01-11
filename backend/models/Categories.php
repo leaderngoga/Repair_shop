@@ -26,14 +26,16 @@ class Categories extends \yii\db\ActiveRecord
         return 'categories';
     }
 
+    
+
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['category_name', 'user_creation', 'status', 'unity_price'], 'required'],
-            [['date_creation'], 'safe'],
+            [['category_name', 'unity_price'], 'required'],
+            [['date_creation', 'user_creation', 'status'], 'safe'],
             [['category_name', 'user_creation', 'unity_price'], 'string', 'max' => 30],
             [['status'], 'string', 'max' => 50],
         ];
@@ -49,7 +51,7 @@ class Categories extends \yii\db\ActiveRecord
             'category_name' => 'Category Name',
             'date_creation' => 'Date Creation',
             'user_creation' => 'User Creation',
-            'status' => 'Status',
+            'status' => 'Published',
             'unity_price' => 'Unity Price',
         ];
     }

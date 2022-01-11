@@ -70,7 +70,8 @@ class ProductsController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'product_id' => $model->product_id]);
+                $lastInsertID = $model->getPrimaryKey();
+                return $this->redirect(['view', 'product_id' => $lastInsertID]);
             }
         } else {
             $model->loadDefaultValues();
