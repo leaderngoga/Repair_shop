@@ -24,15 +24,28 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
             'product_id',
             'product_name',
             'Description',
             'category_id',
-            'date_creation',
+            [
+                'attribute'=>'date_creation',
+                'format'=>['datetime'],
+                'contentOptions'=>['style'=>'white-space:nowrap']
+            ],
             'user_creation',
-            'status',
+            [
+                'attribute'=> 'status',
+                'content'=>function ($model){
+                    /**@var \common\models\categories $model */
+                    return HTML::tag('span',$model->status? 'Active' :'Draft',[
+                            'class'=>$model->status? 'badge badge-success' :'badge badge-danger'
+                    ]);
+                },
+                'contentOptions'=>[
+                    'style'=>'width:80px'
+                ]
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

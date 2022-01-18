@@ -34,11 +34,11 @@ class Products extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['product_name', 'Description', 'category_id', 'user_creation', 'status'], 'required'],
+            [['product_name', 'category_id', 'user_creation', 'status'], 'required'],
             [['category_id'], 'integer'],
             [['date_creation'], 'safe'],
             [['product_name', 'user_creation'], 'string', 'max' => 10],
-            [['Description'], 'string', 'max' => 100],
+            [['Description'], 'string', 'max' => 255],
             [['status'], 'string', 'max' => 50],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Categories::className(), 'targetAttribute' => ['category_id' => 'category_id']],
         ];
@@ -56,7 +56,7 @@ class Products extends \yii\db\ActiveRecord
             'category_id' => 'Category ID',
             'date_creation' => 'Date Creation',
             'user_creation' => 'User Creation',
-            'status' => 'Active',
+            'status' => 'Published',
         ];
     }
 
