@@ -71,12 +71,7 @@ AppAsset::register($this);
                     <span>Categories</span></a>
               </li>
 
-              <!-- Nav Item - Tables -->
-              <li class="nav-item">
-                  <a class="nav-link" href="<?php echo yii\helpers\url::to(['/products/index'])?>">
-                     <i class="fas fa-fw fa-table"></i>
-                     <span>Products</span></a>
-              </li>
+              
 
               <!-- Divider -->
               <hr class="sidebar-divider d-none d-md-block">
